@@ -135,6 +135,31 @@
 	  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
     
 	}
+	@keyframes goldShimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.shimmer-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    120deg,
+    #2E0A5F 0%,
+    #2E0A5F 40%,
+    #E8D5A3 50%,
+    #2E0A5F 60%,
+    #2E0A5F 100%
+  );
+  background-size: 300px 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 3s infinite linear;
+}
 
     @media (hover: none) {
 	.event-card:hover {
@@ -153,12 +178,20 @@
   <div class="w-full min-h-full"><!-- Navigation -->
    <nav class="fixed top-0 left-0 right-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-royal/5">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-	 <div class="flex items-center justify-between h-16"><a href="#hero" class="font-serif text-3xl sm:text-4xl font-bold text-royal tracking-wide" id="nav-logo">SAAGNIKA</a>
+	 <div class="flex items-center justify-between h-16"><a href="#hero" class="font-serif text-2xl sm:text-4xl font-bold text-royal shimmer-text tracking-wide" id="nav-logo">SAAGNIKA</a>
 	  <div class="hidden md:flex items-center space-x-8"><a href="#about" class="nav-link text-sm font-medium text-gray-600 hover:text-royal">About</a> <a href="#events" class="nav-link text-sm font-medium text-gray-600 hover:text-royal">Events</a> <a href="#cricket" class="nav-link text-sm font-medium text-gray-600 hover:text-royal">Cricket</a> <a href="#venue" class="nav-link text-sm font-medium text-gray-600 hover:text-royal">Venue</a> <a href="#register" class="nav-link text-sm font-medium text-gray-600 hover:text-royal">Register</a> <a href="#contact" class="nav-link text-sm font-medium text-gray-600 hover:text-royal">Contact</a>
 	  </div>
 	  <div class="flex items-center gap-2 md:hidden">
 
-	<!-- Register Now Button -->
+	<!-- Rules Button -->
+	<a
+		href="#register"
+		aria-label="Register Now for SAAGNIKA 2026"
+		class="inline-flex items-center gap-1.5 bg-gold hover:bg-royal-light text-white text-xs font-medium px-3 py-2 rounded-full shadow transition"
+	>
+		<span>Rules 📄</span>
+	</a>
+		<!-- Register Now Button -->
 	<a
 		href="#register"
 		aria-label="Register Now for SAAGNIKA 2026"
@@ -175,6 +208,7 @@
 				d="M20 8v6M23 11h-6" />
 		</svg>
 	</a>
+	
 
 	<!-- Hamburger -->
 	<button
@@ -1074,14 +1108,13 @@ if (heroDatesCultural) {
 	</a>
 
 	<!-- Rules Button -->
-	<a
+	 <a
 		href="https://drive.google.com/drive/folders/1fdg9WvGV6gB_5GCLcfZRlZ7Z6nUcoFwt?usp=sharing"
 		target="_blank"
-		aria-label="View Event Rules Brochure"
-		class="px-4 h-14 bg-gold text-lg hover:bg-gold-light text-royal rounded-full flex items-center justify-center gap-2 shadow-lg transition-all duration-300 hover:scale-110"
+		aria-label="View Event rules"
+		class="w-14 h-14 text-2xl bg-gold hover:bg-gold-light text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
 	>
-		<span class="text-2xl">📄</span>
-		<span class="font-medium">Rules</span>
+		📄
 	</a>
 
 </div>
