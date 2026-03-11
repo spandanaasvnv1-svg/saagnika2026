@@ -279,6 +279,12 @@
                 Cultural &amp; Sports Fest: 04 &amp; 05 April 2026
             </span>
         </div>
+		<!-- Countdown Timer -->
+		<div id="countdown"
+			class="fade-in text-royal font-serif font-bold text-lg mb-6"
+			style="transition-delay:0.35s;">
+			⏳ Loading countdown...
+		</div>
 
         <!-- Buttons -->
         <div
@@ -1010,6 +1016,38 @@ if (heroDatesCultural) {
 		}
 	  });
 	});
+	
+	document.addEventListener("DOMContentLoaded", function () {
+
+const eventDate = new Date("April 4, 2026 11:00:00").getTime();
+
+function updateCountdown() {
+
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML = "🎉 SAAGNIKA is happening now!";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+  `⏳ SAAGNIKA starts in ${days}Days ${hours}Hours ${minutes}Minutes ${seconds}Seconds`;
+
+}
+
+// Run immediately
+updateCountdown()
+
+// Update every second
+setInterval(updateCountdown, 1000)
+
+});
   </script>
   <!-- Floating Action Buttons -->
 <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
