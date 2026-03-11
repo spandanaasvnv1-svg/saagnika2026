@@ -1085,38 +1085,5 @@ if (heroDatesCultural) {
 	</a>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script>
-window.addEventListener("load", () => {
-
-  const duration = 1000;
-  const end = Date.now() + duration;
-
-  const colors = ["#C9A84C", "#2E0A5F", "#4A1A8F"];
-
-  (function frame() {
-    confetti({
-      particleCount: 3,
-      angle: 60,
-      spread: 70,
-      origin: { x: 0 },
-      colors: colors
-    });
-
-    confetti({
-      particleCount: 3,
-      angle: 120,
-      spread: 70,
-      origin: { x: 1 },
-      colors: colors
-    });
-
-    if (Date.now() < end) {
-      requestAnimationFrame(frame);
-    }
-  })();
-
-});
-</script>
 </body>
 </html>
